@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pricing Card Grid</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      width: 100%;
+      padding: 40px 16px 60px;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+
+    .pricing-section {
+      background: #ffffff;
+      border-radius: 0;
+      padding: 60px 0;
+    }
+
+    .pricing-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 28px 24px 24px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      text-align: center;
+      border: 2px solid transparent;
+    }
+
+    .card--featured {
+      border-color: #5b34ff;
+    }
+
+    .plan-name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #111;
+    }
+
+    .price {
+      font-size: 28px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 4px;
+    }
+
+    .price span {
+      font-size: 14px;
+      font-weight: 500;
+      color: #666;
+      margin-left: 2px;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin: 14px 0 24px;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 22px;
+      font-size: 13px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: #5b34ff;
+      border: 1px solid #e0e0ff;
+    }
+
+    .btn-primary {
+      background: #5b34ff;
+      color: #ffffff;
+      border: 1px solid #5b34ff;
+    }
+
+    .btn-outline:hover,
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1 class="title">Pricing Card Grid</h1>
+
+    <section class="pricing-section">
+      <div class="pricing-grid">
+        <!-- Free -->
+        <div class="card">
+          <div class="plan-name">Free</div>
+          <div class="price">$0<span>/mo</span></div>
+          <ul class="feature-list">
+            <li>1 user</li>
+            <li>Basic support</li>
+            <li>Access to community</li>
+          </ul>
+          <button class="btn btn-outline">Sign Up</button>
+        </div>
+
+        <!-- Pro (featured) -->
+        <div class="card card--featured">
+          <div class="plan-name">Pro</div>
+          <div class="price">$19<span>/mo</span></div>
+          <ul class="feature-list">
+            <li>Up to 5 users</li>
+            <li>Email support</li>
+            <li>Advanced analytics</li>
+          </ul>
+          <button class="btn btn-primary">Get Started</button>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="card">
+          <div class="plan-name">Enterprise</div>
+          <div class="price">$49<span>/mo</span></div>
+          <ul class="feature-list">
+            <li>Unlimited users</li>
+            <li>Priority support</li>
+            <li>Custom solutions</li>
+          </ul>
+          <button class="btn btn-outline">Contact Us</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
