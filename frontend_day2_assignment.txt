@@ -1,0 +1,210 @@
+Find and fix the bug from below code
+—-----------------------------------------------------------------
+function printName() {
+
+  if (true) {
+
+    var name = "Akshay";
+
+  }
+
+  console.log(name);
+
+}
+
+ 
+
+printName();
+
+answer: 
+var has a local scope and hence cant print the value. the log statemnt should be inside the braces.
+—----------------------------------------------------------------------
+
+ 
+
+let age = "18";
+
+ 
+
+if (age === 18) {
+
+  console.log("Adult");
+
+} else {
+
+  console.log("Minor");
+
+}
+
+ answer:
+ age is declared as string but while checking constraints it is strict with ===. hence it  should be declared as 18 and not "18".
+
+—-------------------------------------------------------------------------
+
+const arr = [10, 20, 30];
+
+ 
+
+for (let i = 0; i <= arr.length; i++) {
+
+  console.log(arr[i]);
+
+}
+
+ answer:
+ index starts from zero and it should not be <= and only < because arr.length value of index is not a valid one.
+
+—-------------------------------------------------------------------
+
+let data;
+
+ 
+
+setTimeout(() => {
+
+  data = "Loaded";
+
+}, 1000);
+
+ 
+
+console.log(data);
+
+answer:
+setTimeout executes asynchronously, therefore it can print undefined
+ 
+
+—-----------------------------------------------------------------------
+
+function add(a, b) {
+
+  a + b;
+
+}
+
+ 
+
+const result = add(2, 3);
+
+console.log(result);
+
+ answer:
+ doesnt return anything, gives error
+
+—-----------------------------------------------------------------------------
+
+ 
+
+const user = {
+
+  name: "John",
+
+  age: 25,
+
+};
+
+ 
+
+function updateAge(u) {
+
+  u.age = 30;
+
+}
+
+ 
+
+updateAge(user);
+
+console.log(user.age);
+
+ answer:
+ no such bug, but func will update the original object.
+
+—------------------------------------------------------------------
+
+html file
+
+ 
+
+<button id="btn">Click</button>
+
+<script>
+
+  const btn = document.getElementById("btn");
+
+  btn.addEventListener("click", handleClick());
+
+ 
+
+  function handleClick() {
+
+    alert("Clicked");
+
+  }
+
+</script>
+
+ answer:
+ function is called immediately instead of passing the function reference to addEventListener
+
+—---------------------------------------------------------------------------
+
+fetch("https://api.example.com/data")
+
+  .then((res) => {
+
+    res.json();
+
+  })
+
+  .then((data) => {
+
+    console.log(data);
+
+  });
+
+ res.json() is not returned from the above then
+
+—--------------------------------------------------------------------------
+
+const nums = [1, 2, 3, 4];
+
+ 
+
+const result = nums.map(No => {
+
+  if (n % 2 === 0) {
+
+    return n * 2;
+
+  }
+
+});
+
+ 
+
+console.log(result);
+
+ answer:
+ variable name used in the callback is incorrect and the function does not return a value for all elements, resulting in undefined values.
+
+—-----------------------------------------------------------------------
+
+const person = {
+
+  name: "Amar",
+
+  greet: () => {
+
+    console.log("Hello " + this.name);
+
+  },
+
+};
+
+ 
+
+person.greet();
+
+answer:
+Arrow functions do not have their own this, so gives undefined
